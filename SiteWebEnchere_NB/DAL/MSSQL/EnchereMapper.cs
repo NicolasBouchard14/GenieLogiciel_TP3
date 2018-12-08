@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GestionEnchereClassLibrary.Model;
+using System;
 using System.Data;
-using System.Linq;
-using System.Web;
-using SiteWebEnchere_NB.Model;
+
 
 namespace SiteWebEnchere_NB.DAL.MSSQL
 {
     public class EnchereMapper : AbstractMapper, IEnchereMapper
     {
-        public int Delete(Enchere pEnchere)
+        public int Delete(BO_Enchere pEnchere)
         {
             throw new NotImplementedException();
         }
 
-        public Enchere Find(int IdEnchere)
+        public BO_Enchere Find(int IdEnchere)
         {
             throw new NotImplementedException();
         }
@@ -24,12 +22,12 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
             throw new NotImplementedException();
         }
 
-        public int Insert(Enchere pEnchere)
+        public int Insert(BO_Enchere pEnchere)
         {
             throw new NotImplementedException();
         }
 
-        public int Update(Enchere pEnchere)
+        public int Update(BO_Enchere pEnchere)
         {
             throw new NotImplementedException();
         }

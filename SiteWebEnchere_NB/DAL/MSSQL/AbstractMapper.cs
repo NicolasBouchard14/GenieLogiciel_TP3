@@ -1,18 +1,16 @@
-﻿using System;
+﻿using GestionEnchereClassLibrary.Model;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using SiteWebEnchere_NB.Model;
+
 
 namespace SiteWebEnchere_NB.DAL.MSSQL
 {
     public abstract class AbstractMapper
     {
-        private Dictionary<int, BaseModel> lLoadedMap = new Dictionary<int, BaseModel>();
+        private Dictionary<int, BO_BaseModel> lLoadedMap = new Dictionary<int, BO_BaseModel>();
 
         public AbstractMapper() { }
 
-        protected BaseModel AbstractFind(int pID)
+        protected BO_BaseModel AbstractFind(int pID)
         {
             if (lLoadedMap.ContainsKey(pID))
             {
@@ -21,7 +19,7 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
             return null;
         }
 
-        protected Dictionary<int, BaseModel> LoadedMap
+        protected Dictionary<int, BO_BaseModel> LoadedMap
         {
             get { return lLoadedMap; }
             set { lLoadedMap = value; }

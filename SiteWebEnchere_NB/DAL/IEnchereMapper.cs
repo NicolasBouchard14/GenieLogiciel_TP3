@@ -1,15 +1,15 @@
-﻿using SiteWebEnchere_NB.Model;
+﻿using GestionEnchereClassLibrary.Model;
 using System.Data;
 
 namespace SiteWebEnchere_NB.DAL
 {
     public interface IEnchereMapper
     {
-        Enchere Find(int IdEnchere);
+        BO_Enchere Find(int IdEnchere);
         DataTable FindAll();
 
-        int Insert(Enchere pEnchere);
-        int Update(Enchere pEnchere);
-        int Delete(Enchere pEnchere);
+        int Insert(BO_Enchere pEnchere);
+        int Update(BO_Enchere pEnchere);
+        int Delete(BO_Enchere pEnchere);
     }
 }

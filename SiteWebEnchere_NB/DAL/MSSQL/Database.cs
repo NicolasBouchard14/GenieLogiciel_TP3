@@ -51,7 +51,7 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
             }
         }
 
-        public static DataTable SelectRows(string psTableName, string psColumn, Guid ID)
+        public static DataTable SelectRows(string psTableName, string psColumn, int ID)
         {
             psTableName = psTableName.Trim();
 
@@ -90,9 +90,9 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
         }
 
         // Return a DataRow (the first row) of the Table [psTableName] where ID = [pID]
-        public static DataRow SelectID(Guid pID, string psTableName)
+        public static DataRow SelectID(int pID, string psTableName)
         {
-            if (Util.isNULL(pID))
+            if (Util.isValidId(pID))
             {
                 return null;
             }
@@ -102,34 +102,6 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
                 return null;
             }
             return SelectRow("SELECT TOP 1 * FROM " + psTableName + " WHERE ID = '" + pID.ToString() + "'");
-        }
-
-        public static DataRow SelectID(string psID, string psTableName)
-        {
-            if (!Util.isValidGuid(psID))
-            {
-                return null;
-            }
-            psTableName = psTableName.Trim();
-            if (psTableName == "")
-            {
-                return null;
-            }
-            return SelectRow("SELECT TOP 1 * FROM " + psTableName + " WHERE ID = '" + psID + "'");
-        }
-
-        public static DataRow SelectID(Guid pID, string psIDName, string psTableName)
-        {
-            if (Util.isNULL(pID))
-            {
-                return null;
-            }
-            psTableName = psTableName.Trim();
-            if (psTableName == "")
-            {
-                return null;
-            }
-            return SelectRow("SELECT TOP 1 * FROM " + psTableName + " WHERE " + psIDName + " = '" + pID.ToString() + "'");
         }
 
         // Delete everything from the Query [psQuery]
@@ -154,9 +126,9 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
 
         // Delete ID [pID] from Table [psTableName]
         // Return number of record affected
-        public static int DeleteID(Guid pID, string psTableName)
+        public static int DeleteID(int pID, string psTableName)
         {
-            if (Util.isNULL(pID))
+            if (Util.isValidId(pID))
             {
                 return int.MinValue;
             }
@@ -168,47 +140,6 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
             return Delete("DELETE FROM " + psTableName + " WHERE ID = '" + pID + "'");
         }
 
-        public static int DeleteID(string psID, string psTableName)
-        {
-            if (!Util.isValidGuid(psID))
-            {
-                return int.MinValue;
-            }
-            psTableName = psTableName.Trim();
-            if (psTableName == "")
-            {
-                return int.MinValue;
-            }
-            return Delete("DELETE FROM " + psTableName + " WHERE ID = '" + psID + "'");
-        }
-
-        public static int DeleteID(Guid pID, string psIDName, string psTableName)
-        {
-            if (Util.isNULL(pID))
-            {
-                return int.MinValue;
-            }
-            psTableName = psTableName.Trim();
-            if (psTableName == "" || psIDName == "")
-            {
-                return int.MinValue;
-            }
-            return Delete("DELETE FROM " + psTableName + " WHERE " + psIDName + " = '" + pID + "'");
-        }
-
-        public static int DeleteID(string psID, string psIDName, string psTableName)
-        {
-            if (!Util.isValidGuid(psID))
-            {
-                return int.MinValue;
-            }
-            psTableName = psTableName.Trim();
-            if (psTableName == "" || psIDName == "")
-            {
-                return int.MinValue;
-            }
-            return Delete("DELETE FROM " + psTableName + " WHERE " + psIDName + " = '" + psID + "'");
-        }
 
         // Delete everything from Table [psTableName]
         // Return number of record affected
@@ -434,42 +365,31 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
         // SET [psAffectedValues] (must contain "col = value")
         // WHERE ID = '[psID]'
         // Return number of record affected
-        public static int UpdateID(string psTableName, string psAffectedValues, string psID)
-        {
-            if (!Util.isValidGuid(psID))
-                return int.MinValue;
-            return Update(psTableName, psAffectedValues, "ID = '" + psID + "'");
-        }
-
-        // Update Table [psTableName]
-        // SET [psAffectedValues] (must contain "col = value")
-        // WHERE ID = '[psID]'
-        // Return number of record affected
-        public static int UpdateID(string psTableName, string psAffectedValues, Guid pID)
+        public static int UpdateID(string psTableName, string psAffectedValues, int pID)
         {
             if (Util.isNULL(pID))
                 return int.MinValue;
-            return Update(psTableName, psAffectedValues, "ID = '" + pID.ToString() + "'");
+            return Update(psTableName, psAffectedValues, "ID = '" + pID + "'");
         }
 
         // Update Table [psTableName]
         // SET [psCols[i]=psValues[i]], [psCols[i+1]=psValues[i+1]], ...
         // WHERE ID = '[pID.toString()]'
         // Return number of record affected
-        public static int UpdateID(string psTableName, string[] psCols, string[] psValues, Guid pID)
+        public static int UpdateID(string psTableName, string[] psCols, string[] psValues, int pID)
         {
             if (Util.isNULL(pID))
                 return int.MinValue;
-            return UpdateID(psTableName, psCols, psValues, pID.ToString());
+            return UpdateID(psTableName, psCols, psValues, pID);
         }
 
         // Update Table [psTableName]
         // SET [psCols[i]=psValues[i]], [psCols[i+1]=psValues[i+1]], ...
         // WHERE ID = '[psID]'
         // Return number of record affected
-        public static int UpdateID(string psTableName, string[] psCols, string[] psValues, string psID)
+        public static int UpdateMultipleID(string psTableName, string[] psCols, string[] psValues, int psID)
         {
-            if (!Util.isValidGuid(psID))
+            if (!Util.isValidId(psID))
                 return int.MinValue;
             psTableName = psTableName.Trim();
             if (psTableName == "")

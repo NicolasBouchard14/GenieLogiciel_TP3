@@ -91,21 +91,14 @@ namespace SiteWebEnchere_NB.DAL
             return (pNullableObj == null);
         }
 
-        public static bool isValidGuid(string psGuid)
+        public static bool isValidId(int psId)
         {
-            if (isNULL(psGuid))
+            if (isNULL(psId))
                 return false;
-            if (psGuid == "")
+            if (psId <= 0)
                 return false;
-            try
-            {
-                Guid lGuid = new Guid(psGuid);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+
+            return true;
         }
 
         public static bool isCharAlphaNum(char pcChar)
@@ -135,19 +128,6 @@ namespace SiteWebEnchere_NB.DAL
                     (liChar >= 214 && liChar <= 216) || (liChar == 222) || (liChar == 224) ||
                     (liChar >= 226 && liChar <= 229) || (liChar >= 233 && liChar <= 237));
         }
-
-        #endregion
-
-        #region Générateurs
-
-        public static string random8DigitsString()
-        {
-            Random generator = new Random();
-            String numeroPrescription = generator.Next(0, 1000000).ToString("D8");
-
-            return numeroPrescription;
-        }
-
 
         #endregion
     }
