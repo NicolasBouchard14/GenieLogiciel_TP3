@@ -3,3 +3,6 @@
 ################################################################################
 
 /packages
+/SiteWebEnchere_NB/bin
+/SiteWebEnchere_NB/obj/Debug
+/.vs
