@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SiteWebUtilisateur_NB.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,10 @@ namespace SiteWebEnchere_NB.DAL
     public abstract class DataMapperFactory
     {
         public abstract IEnchereMapper GetEnchereMapper();
+
+        public abstract IDemandeCreationEnchereMapper GetDemandeCreationEnchereMapper();
+
+        public abstract IUtilisateurMapper GetUtilisateurMapper();
 
         public static DataMapperFactory GetDataMapperFactory()
         {
@@ -24,6 +29,8 @@ namespace SiteWebEnchere_NB.DAL
                     return null;
                 case MapperType.FLAT_FILE:
                     return null;
+                case MapperType.XML:
+                    return new XML.XMLDataMapperFactory();
                 case MapperType.NONE:
                     return null;
                 default:

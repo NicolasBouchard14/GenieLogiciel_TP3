@@ -14,6 +14,7 @@ namespace SiteWebEnchere_NB.DAL
             MSSQL,
             ORACLE,
             FLAT_FILE,
+            XML,
             NONE
         }
     }

@@ -1,30 +1,30 @@
-﻿using SiteWebUtilisateur_NB.DAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using SiteWebUtilisateur_NB.DAL;
 
-namespace SiteWebEnchere_NB.DAL.MSSQL
+namespace SiteWebEnchere_NB.DAL.XML
 {
-    public class MSSQLDataMapperFactory : DataMapperFactory
+    public class XMLDataMapperFactory : DataMapperFactory
     {
-        public MSSQLDataMapperFactory()
+        public XMLDataMapperFactory()
         {
         }
 
         public override IDemandeCreationEnchereMapper GetDemandeCreationEnchereMapper()
         {
-            throw new NotImplementedException();
+            return new DemandeCreationEnchereMapper();
         }
 
         public override IEnchereMapper GetEnchereMapper()
         {
-            return new EnchereMapper();
+            throw new NotImplementedException();
         }
 
         public override IUtilisateurMapper GetUtilisateurMapper()
         {
-            return new UtilisateurMapper();
+            throw new NotImplementedException();
         }
     }
 }

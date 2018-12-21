@@ -14,5 +14,10 @@ namespace SiteWebEnchere_NB
         {
             return MapperType.MSSQL;
         }
+
+        public static string getXMLFolderBasePath()
+        {
+            return @ConfigurationManager.AppSettings["BaseXMLFolderPath"];
+        }
     }
 }
