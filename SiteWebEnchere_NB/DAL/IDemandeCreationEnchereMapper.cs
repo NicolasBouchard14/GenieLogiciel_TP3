@@ -9,6 +9,6 @@ namespace SiteWebEnchere_NB.DAL
     public interface IDemandeCreationEnchereMapper
     {
 
-        void SaveToXML(BO_DemandeCreationEnchere pDemandeCreationEnchere);
+        bool SaveToXML(BO_DemandeCreationEnchere pDemandeCreationEnchere);
     }
 }

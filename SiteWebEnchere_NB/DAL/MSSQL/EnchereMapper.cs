@@ -46,9 +46,11 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
             return enchere;
         }
 
-        public DataTable FindAll()
+        public DataSet FindAll()
         {
-            return DataBase.SelectTable("[dbo].[DemandeCreationEnchere]", "");
+            DataSet ds = new DataSet();
+            ds.Tables.Add(DataBase.SelectTable("[dbo].[DemandeCreationEnchere]", ""));
+            return ds;
         }
 
         public int Insert(BO_Enchere pEnchere)

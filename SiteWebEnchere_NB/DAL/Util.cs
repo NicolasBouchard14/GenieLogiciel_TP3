@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.IO;
+using System.Xml;
+using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace SiteWebEnchere_NB.DAL
 {
@@ -127,6 +128,49 @@ namespace SiteWebEnchere_NB.DAL
                     (liChar == 198) || (liChar == 199) || (liChar >= 210 && liChar <= 212) ||
                     (liChar >= 214 && liChar <= 216) || (liChar == 222) || (liChar == 224) ||
                     (liChar >= 226 && liChar <= 229) || (liChar >= 233 && liChar <= 237));
+        }
+
+        private static string GetXMLFromObject(object o)
+        {
+            StringWriter sw = new StringWriter();
+            XmlTextWriter tw = null;
+            try
+            {
+                XmlSerializer serializer = new XmlSerializer(o.GetType());
+                tw = new XmlTextWriter(sw);
+                serializer.Serialize(tw, o);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                sw.Close();
+                if (tw != null)
+                {
+                    tw.Close();
+                }
+            }
+            return sw.ToString();
+        }
+
+        public static XDocument ChangeRootNodeNameSpace(object pObject)
+        {
+            string xmlObject = GetXMLFromObject(pObject);
+            string XmlSchemaName = pObject.GetType().ToString().Split('_')[1];
+            XDocument xmlDoc = XDocument.Parse(xmlObject);
+            XNamespace ns0 = "http://BiztalkEnchereSchemas." + XmlSchemaName;
+            XDocument resultXmlDoc = new XDocument(
+                new XElement
+                (
+                    ns0 + XmlSchemaName,
+                    new XAttribute(XNamespace.Xmlns + "ns0", ns0),
+                    xmlDoc.Root.Nodes()
+                )
+            );
+
+            return resultXmlDoc;
         }
 
         #endregion

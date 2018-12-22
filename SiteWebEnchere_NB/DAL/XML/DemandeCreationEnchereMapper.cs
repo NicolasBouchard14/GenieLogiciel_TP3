@@ -5,18 +5,26 @@ using System.Web;
 using GestionEnchereClassLibrary.Model;
 using System.Xml.Serialization;
 using System.IO;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace SiteWebEnchere_NB.DAL.XML
 {
     public class DemandeCreationEnchereMapper : IDemandeCreationEnchereMapper
     {
-        public void SaveToXML(BO_DemandeCreationEnchere pDemandeCreationEnchere)
+        public bool SaveToXML(BO_DemandeCreationEnchere pDemandeCreationEnchere)
         {
-            XmlSerializer writer = new XmlSerializer(typeof(BO_DemandeCreationEnchere));
-            var path = GlobalConfig.getXMLFolderBasePath() + @"\Utilisateur\In\DemandeCreationEnchere\DemandeCreationEnchere.xml";
-            using (FileStream file = File.Create(path))
+            try
             {
-                writer.Serialize(file, pDemandeCreationEnchere);
+                var path = GlobalConfig.getXMLFolderBasePath() + @"\Utilisateur\In\DemandeCreationEnchere\DemandeCreationEnchere.xml";
+                XDocument XmlDocument =  Util.ChangeRootNodeNameSpace(pDemandeCreationEnchere);
+                XmlDocument.Save(path);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
     }

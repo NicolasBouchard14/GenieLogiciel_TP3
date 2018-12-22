@@ -15,6 +15,28 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
             throw new NotImplementedException();
         }
 
+        public BO_Utilisateur Find(string pUsername)
+        {
+            DataRow row = DataBase.SelectRow("[dbo].[Utilisateur]", $"NomUtilisateur = '{pUsername}'");
+            if (Util.isNULL(row))
+                return null;
+            BO_Utilisateur utilisateur = this.FillFields(row);
+            LoadedMap.Add(utilisateur.ID, utilisateur);
+
+            return utilisateur;
+        }
+
+        private BO_Utilisateur FillFields(DataRow pDataRow)
+        {
+            BO_Utilisateur utilisateur = new BO_Utilisateur();
+
+            utilisateur.ID = (int)pDataRow["ID"];
+            utilisateur.NomUtilisateur = (string)pDataRow["NomUtilisateur"];
+            utilisateur.Courriel = (string)pDataRow["Courriel"];
+
+            return utilisateur;
+        }
+
         public DataTable FindAll()
         {
             return DataBase.SelectTable("[dbo].[Utilisateur]", "");
@@ -34,5 +56,6 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
         {
             throw new NotImplementedException();
         }
+
     }
 }

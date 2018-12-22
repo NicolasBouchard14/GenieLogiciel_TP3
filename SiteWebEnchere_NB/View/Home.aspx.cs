@@ -12,10 +12,6 @@ namespace SiteWebEnchere_NB.View
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.Page.User.Identity.IsAuthenticated)
-            {
-                FormsAuthentication.RedirectToLoginPage();
-            }
         }
     }
 }
