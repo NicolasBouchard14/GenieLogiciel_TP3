@@ -10,15 +10,24 @@
 namespace SiteWebEnchere_NB.View {
     
     
-    public partial class Authenticate {
+    public partial class ListeEnchereRemportees {
         
         /// <summary>
-        /// Contrôle Login.
+        /// Contrôle GridView.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Login Login;
+        protected global::System.Web.UI.WebControls.GridView GridView;
+        
+        /// <summary>
+        /// Contrôle EnchereMapperSource.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource EnchereMapperSource;
     }
 }

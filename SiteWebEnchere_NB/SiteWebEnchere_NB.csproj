@@ -50,6 +50,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -79,6 +83,7 @@
     <Content Include="Scripts\NotificationJS.js" />
     <Content Include="View\AddUser.aspx" />
     <Content Include="View\Layout.Master" />
+    <Content Include="Request.log" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -131,6 +136,9 @@
     <Content Include="View\AddEnchere.aspx" />
     <Content Include="View\Home.aspx" />
     <Content Include="View\Authenticate.aspx" />
+    <Content Include="View\ListeEnchereRemportees.aspx" />
+    <Content Include="View\PayEnchere.aspx" />
+    <Content Include="View\ShowEnchere.aspx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -144,13 +152,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command\AddEnchereCommand.cs" />
+    <Compile Include="Command\AddUserCommand.cs" />
     <Compile Include="Command\AuthenticateCommand.cs" />
     <Compile Include="Command\FrontCommand.cs" />
     <Compile Include="Command\HomeCommand.cs" />
+    <Compile Include="Command\ListeEnchereRemportees.cs" />
+    <Compile Include="Command\PayEnchereCommand.cs" />
+    <Compile Include="Command\ShowEnchereCommand.cs" />
     <Compile Include="DAL\DataMapperFactory.cs" />
+    <Compile Include="DAL\IEncherissementMapper.cs" />
     <Compile Include="DAL\Enum.cs" />
     <Compile Include="DAL\IDemandeCreationEnchereMapper.cs" />
     <Compile Include="DAL\IEnchereMapper.cs" />
+    <Compile Include="DAL\IPaiementMapper.cs" />
     <Compile Include="DAL\IUtilisateurMapper.cs" />
     <Compile Include="DAL\MSSQL\AbstractMapper.cs" />
     <Compile Include="DAL\MSSQL\Database.cs" />
@@ -159,8 +173,12 @@
     <Compile Include="DAL\MSSQL\EnchereMapper.cs" />
     <Compile Include="DAL\MSSQL\MSSQLDataMapperFactory.cs" />
     <Compile Include="DAL\Util.cs" />
+    <Compile Include="DAL\XML\EncherissementMapper.cs" />
+    <Compile Include="DAL\XML\PaiementMapper.cs" />
     <Compile Include="DAL\XML\XMLDataMapperFactory.cs" />
     <Compile Include="GlobalConfig.cs" />
+    <Compile Include="Helper\ModelValidationHelper.cs" />
+    <Compile Include="HttpFilter.cs" />
     <Compile Include="HttpRequestHandler.ashx.cs">
       <DependentUpon>HttpRequestHandler.ashx</DependentUpon>
     </Compile>
@@ -205,6 +223,27 @@
     </Compile>
     <Compile Include="View\Authenticate.aspx.designer.cs">
       <DependentUpon>Authenticate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListeEnchereRemportees.aspx.cs">
+      <DependentUpon>ListeEnchereRemportees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ListeEnchereRemportees.aspx.designer.cs">
+      <DependentUpon>ListeEnchereRemportees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\PayEnchere.aspx.cs">
+      <DependentUpon>PayEnchere.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\PayEnchere.aspx.designer.cs">
+      <DependentUpon>PayEnchere.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShowEnchere.aspx.cs">
+      <DependentUpon>ShowEnchere.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ShowEnchere.aspx.designer.cs">
+      <DependentUpon>ShowEnchere.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

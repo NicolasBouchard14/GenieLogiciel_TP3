@@ -155,7 +155,7 @@ namespace SiteWebEnchere_NB.DAL
             return sw.ToString();
         }
 
-        public static XDocument ChangeRootNodeNameSpace(object pObject)
+        public static XDocument GetXmlDocumentFromObject(object pObject)
         {
             string xmlObject = GetXMLFromObject(pObject);
             string XmlSchemaName = pObject.GetType().ToString().Split('_')[1];

@@ -11,6 +11,5 @@ namespace SiteWebEnchere_NB.DAL
         int Insert(BO_Enchere pEnchere);
         int Update(BO_Enchere pEnchere);
         int Delete(BO_Enchere pEnchere);
-
     }
 }

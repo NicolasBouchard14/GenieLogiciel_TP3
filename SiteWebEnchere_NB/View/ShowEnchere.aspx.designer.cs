@@ -10,213 +10,168 @@
 namespace SiteWebEnchere_NB.View {
     
     
-    public partial class AddUser {
+    public partial class ShowEnchere {
         
         /// <summary>
-        /// Contrôle Label_NomUtilisateur.
+        /// Contrôle Label_NomEnchere.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_NomUtilisateur;
+        protected global::System.Web.UI.WebControls.Label Label_NomEnchere;
         
         /// <summary>
-        /// Contrôle TextBox_NomUtilisateur.
+        /// Contrôle TextBox_NomEnchere.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_NomUtilisateur;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_NomEnchere;
         
         /// <summary>
-        /// Contrôle Label_MDP.
+        /// Contrôle Label_PrixMin.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_MDP;
+        protected global::System.Web.UI.WebControls.Label Label_PrixMin;
         
         /// <summary>
-        /// Contrôle TextBox_MDP.
+        /// Contrôle TextBox_PrixMin.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_MDP;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_PrixMin;
         
         /// <summary>
-        /// Contrôle Label_MDP2.
+        /// Contrôle Label_Duree.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_MDP2;
+        protected global::System.Web.UI.WebControls.Label Label_Duree;
         
         /// <summary>
-        /// Contrôle TextBox_MDP2.
+        /// Contrôle TextBox_Duree.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_MDP2;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Duree;
         
         /// <summary>
-        /// Contrôle Label_Courriel.
+        /// Contrôle Label_Categorie.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_Courriel;
+        protected global::System.Web.UI.WebControls.Label Label_Categorie;
         
         /// <summary>
-        /// Contrôle TextBox_Courriel.
+        /// Contrôle DropDownList_Categorie.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Courriel;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Categorie;
         
         /// <summary>
-        /// Contrôle Label_Courriel2.
+        /// Contrôle Label_Transport.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_Courriel2;
+        protected global::System.Web.UI.WebControls.Label Label_Transport;
         
         /// <summary>
-        /// Contrôle TextBox_Courriel2.
+        /// Contrôle DropDownList_OptionTransport.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Courriel2;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_OptionTransport;
         
         /// <summary>
-        /// Contrôle Label_Langue.
+        /// Contrôle Label_TypeEnchere.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_Langue;
+        protected global::System.Web.UI.WebControls.Label Label_TypeEnchere;
         
         /// <summary>
-        /// Contrôle DropDownList_Langue.
+        /// Contrôle DropDownList_TypeEnchere.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Langue;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_TypeEnchere;
         
         /// <summary>
-        /// Contrôle Label_Prenom.
+        /// Contrôle Label_AutresInfos.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_Prenom;
+        protected global::System.Web.UI.WebControls.Label Label_AutresInfos;
         
         /// <summary>
-        /// Contrôle TextBox_Prenom.
+        /// Contrôle TextBox_AutresInfos.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Prenom;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_AutresInfos;
         
         /// <summary>
-        /// Contrôle Label_Nom.
+        /// Contrôle Panel_Action.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_Nom;
+        protected global::System.Web.UI.WebControls.Panel Panel_Action;
         
         /// <summary>
-        /// Contrôle TextBox_Nom.
+        /// Contrôle TextBox_OffreMaximale.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Nom;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_OffreMaximale;
         
         /// <summary>
-        /// Contrôle Label_Adresse.
+        /// Contrôle Button_Encherir.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_Adresse;
+        protected global::System.Web.UI.WebControls.Button Button_Encherir;
         
         /// <summary>
-        /// Contrôle TextBox_Adresse.
+        /// Contrôle CheckBox_Follow.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Adresse;
-        
-        /// <summary>
-        /// Contrôle Label_Tel.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_Tel;
-        
-        /// <summary>
-        /// Contrôle TextBox_tel.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_tel;
-        
-        /// <summary>
-        /// Contrôle Label_DateNaissance.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_DateNaissance;
-        
-        /// <summary>
-        /// Contrôle TextBox_DateNaissance.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_DateNaissance;
-        
-        /// <summary>
-        /// Contrôle Submit_NewUser.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Submit_NewUser;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_Follow;
     }
 }

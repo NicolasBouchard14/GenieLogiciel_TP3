@@ -10,24 +10,33 @@
 namespace SiteWebEnchere_NB.View {
     
     
-    public partial class Home {
+    public partial class PayEnchere {
         
         /// <summary>
-        /// Contrôle GridView.
+        /// Contrôle Label_InformationsPaiement.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView;
+        protected global::System.Web.UI.WebControls.Label Label_InformationsPaiement;
         
         /// <summary>
-        /// Contrôle EnchereMapperSource.
+        /// Contrôle TextBox_InformationsPaiement.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource EnchereMapperSource;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_InformationsPaiement;
+        
+        /// <summary>
+        /// Contrôle Payer_Enchere.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Payer_Enchere;
     }
 }

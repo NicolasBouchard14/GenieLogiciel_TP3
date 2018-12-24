@@ -15,6 +15,10 @@ namespace SiteWebEnchere_NB.DAL
 
         public abstract IUtilisateurMapper GetUtilisateurMapper();
 
+        public abstract IEncherissementMapper GetEncherissementMapper();
+
+        public abstract IPaiementMapper GetPaiementMapper();
+
         public static DataMapperFactory GetDataMapperFactory()
         {
             switch (GlobalConfig.getMapperType())

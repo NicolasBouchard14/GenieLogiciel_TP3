@@ -22,6 +22,16 @@ namespace SiteWebEnchere_NB.DAL.XML
             throw new NotImplementedException();
         }
 
+        public override IEncherissementMapper GetEncherissementMapper()
+        {
+            return new EncherissementMapper();
+        }
+
+        public override IPaiementMapper GetPaiementMapper()
+        {
+            return new PaiementMapper();
+        }
+
         public override IUtilisateurMapper GetUtilisateurMapper()
         {
             throw new NotImplementedException();

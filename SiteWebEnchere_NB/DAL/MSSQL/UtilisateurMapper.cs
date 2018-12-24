@@ -44,7 +44,10 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
 
         public int Insert(BO_Utilisateur pUtilisateur)
         {
-            throw new NotImplementedException();
+            string[] lsCols = null;
+            string[] lsValues = null;
+            this.FillArray(ref lsCols, ref lsValues, pUtilisateur);
+            return DataBase.Insert("[dbo].[Utilisateur]", lsCols, lsValues);
         }
 
         public int Update(BO_Utilisateur pUtilisateur)
@@ -57,5 +60,38 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
             throw new NotImplementedException();
         }
 
+
+        private void FillArray(ref string[] pCols, ref string[] pValues, BO_Utilisateur pUtilisateur)
+        {
+            int liCpt = 0;
+
+            pCols = new string[8];
+            pValues = new string[8];
+
+            pCols[liCpt] = "NomUtilisateur";
+            pValues[liCpt++] = "'" + Util.DoubleQuote(pUtilisateur.NomUtilisateur) + "'";
+
+            pCols[liCpt] = "MotDePasse";
+            pValues[liCpt++] = "'" + Util.DoubleQuote(pUtilisateur.MotDePasse) + "'";
+
+            pCols[liCpt] = "Courriel";
+            pValues[liCpt++] = "'" + Util.DoubleQuote(pUtilisateur.Courriel) + "'";
+
+            pCols[liCpt] = "Prenom";
+            pValues[liCpt++] = "'" + Util.DoubleQuote(pUtilisateur.Prenom) + "'";
+
+            pCols[liCpt] = "Nom";
+            pValues[liCpt++] = "'" + Util.DoubleQuote(pUtilisateur.Nom) + "'";
+
+            pCols[liCpt] = "DateNaissance";
+            pValues[liCpt++] = "'" + Util.DoubleQuote(pUtilisateur.DateNaissance.GetValueOrDefault().ToShortDateString()) + "'";
+
+            pCols[liCpt] = "Adresse";
+            pValues[liCpt++] = "'" + Util.DoubleQuote(pUtilisateur.Adresse) + "'";
+
+            pCols[liCpt] = "Langue";
+            pValues[liCpt++] = "'" + Util.DoubleQuote(pUtilisateur.Langue) + "'";
+
+        }
     }
 }

@@ -22,6 +22,16 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
             return new EnchereMapper();
         }
 
+        public override IEncherissementMapper GetEncherissementMapper()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override IPaiementMapper GetPaiementMapper()
+        {
+            throw new NotImplementedException();
+        }
+
         public override IUtilisateurMapper GetUtilisateurMapper()
         {
             return new UtilisateurMapper();

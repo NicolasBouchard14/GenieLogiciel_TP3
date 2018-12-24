@@ -17,7 +17,7 @@ namespace SiteWebEnchere_NB.DAL.XML
             try
             {
                 var path = GlobalConfig.getXMLFolderBasePath() + @"\Utilisateur\In\DemandeCreationEnchere\DemandeCreationEnchere.xml";
-                XDocument XmlDocument =  Util.ChangeRootNodeNameSpace(pDemandeCreationEnchere);
+                XDocument XmlDocument =  Util.GetXmlDocumentFromObject(pDemandeCreationEnchere);
                 XmlDocument.Save(path);
 
                 return true;

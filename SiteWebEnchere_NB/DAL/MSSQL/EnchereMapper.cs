@@ -18,7 +18,7 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
         {
             BO_Enchere enchere = (BO_Enchere)AbstractFind(ID);
 
-            if (!Util.isNULL(enchere))
+            if (Util.isNULL(enchere))
             {
                 DataRow row = DataBase.SelectID(ID, "[dbo].[DemandeCreationEnchere]");
                 if (Util.isNULL(row))

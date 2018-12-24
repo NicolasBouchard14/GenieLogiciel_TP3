@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -55,7 +56,17 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
         {
             psTableName = psTableName.Trim();
 
+
             return psTableName == "" ? null : Select("SELECT * FROM " + psTableName + " WHERE " + psColumn + " = '" + ID + "'");
+        }
+
+        public static DataTable SelectRowsIn(string psTableName, string psColumn, List<int> IDs)
+        {
+            psTableName = psTableName.Trim();
+
+            string formattedIDs = string.Join(",", IDs);
+
+            return psTableName == "" ? null : Select("SELECT * FROM " + psTableName + " WHERE " + psColumn + " IN (" + formattedIDs + ")");
         }
 
         // Return a DataRow (the first row) of the SQL Query [psQuery}
@@ -92,7 +103,7 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
         // Return a DataRow (the first row) of the Table [psTableName] where ID = [pID]
         public static DataRow SelectID(int pID, string psTableName)
         {
-            if (Util.isValidId(pID))
+            if (!Util.isValidId(pID))
             {
                 return null;
             }
@@ -101,7 +112,7 @@ namespace SiteWebEnchere_NB.DAL.MSSQL
             {
                 return null;
             }
-            return SelectRow("SELECT TOP 1 * FROM " + psTableName + " WHERE ID = '" + pID.ToString() + "'");
+            return SelectRow("SELECT TOP 1 * FROM " + psTableName + " WHERE ID = " + pID);
         }
 
         // Delete everything from the Query [psQuery]
